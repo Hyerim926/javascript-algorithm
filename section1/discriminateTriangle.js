@@ -5,7 +5,11 @@
 
 const solution = (a, b, c) => {
     const side = [a, b, c];
-    side.sort();
+    side.sort((a, b) => {
+        if (a < b) return -1;
+        if (a === b) return 0;
+        if (a > b) return 1;
+    });
 
     if ((side[0] + side[1]) > side[2]) {
         return 'YES';
