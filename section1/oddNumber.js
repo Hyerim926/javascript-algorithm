@@ -6,11 +6,13 @@
 * 77 + 41 + 53 + 85 = 256 이 되고, 41 < 53 < 77 < 85이므로 홀수들 중 최소값은 41이 된다. */
 
 const solution = (a, b, c, d, e, f, g) => {
+    // 홀수만 있는 배열을 만들어 sum을 구하고 배열을 정렬하여 0번째 값을 구함
     let sum = 0;
 
     const valueArray = [a, b, c, d, e, f, g];
     const oddArray = [];
 
+    // 이 부분을 그냥 arr.filter()로 만들어도 되었을 거 같다
     valueArray.forEach((a) => {
         if (a % 2 === 1) {
             oddArray.push(a);

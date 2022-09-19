@@ -5,6 +5,8 @@
 * 계산하는 프로그램을 작성하세요 */
 
 const solution = (n) => {
+
+    // n을 12로 나눈 값을 parseInt로 몫만 가지고 있고, 나머지가 0보다 큰 경우에는 그 몫에 1을 더해줌
     let pencils = parseInt(n / 12);
     // 올림 함수인 Math.ceil() 사용하면 한 줄로 가능
     // let pencils = Math.ceil(n / 12);
