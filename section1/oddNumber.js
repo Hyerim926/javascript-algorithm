@@ -12,7 +12,6 @@ const solution = (a, b, c, d, e, f, g) => {
     const valueArray = [a, b, c, d, e, f, g];
     const oddArray = [];
 
-    // 이 부분을 그냥 arr.filter()로 만들어도 되었을 거 같다
     valueArray.forEach((a) => {
         if (a % 2 === 1) {
             sum += a
