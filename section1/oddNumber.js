@@ -15,11 +15,10 @@ const solution = (a, b, c, d, e, f, g) => {
     // 이 부분을 그냥 arr.filter()로 만들어도 되었을 거 같다
     valueArray.forEach((a) => {
         if (a % 2 === 1) {
+            sum += a
             oddArray.push(a);
         }
     })
-
-    oddArray.forEach((a) => sum += a);
 
     console.log(sum);
 
@@ -33,3 +32,22 @@ const solution = (a, b, c, d, e, f, g) => {
 }
 
 solution(12, 77, 38, 41, 53, 92, 85);
+
+// 강사님 코드
+const anotherSolution = (arr) => {
+    let answer = [];
+    let sum = 0, min = Number.MAX_SAFE_INTEGER;
+    for (let x of arr) {
+        if (x % 2 === 1) {
+            sum += x;
+            if (x < min) min = x;
+        }
+    }
+    answer.push(sum);
+    answer.push(min);
+    return answer;
+}
+
+const arr = [12, 77, 38, 41, 53, 92, 85];
+console.log(anotherSolution(arr));
+
