@@ -16,8 +16,8 @@ const solution = () => {
     let compared = studentArray[0];
     for (let i = 0; i < studentArray.length; i++) {
         if (compared < studentArray[i + 1]) {
-            compared = studentArray[i + 1];
             answer += 1;
+            compared = studentArray[i + 1];
         }
     }
 
