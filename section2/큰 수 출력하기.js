@@ -8,13 +8,12 @@ const solution = () => {
     const n = prompt('1부터 100사이의 숫자 하나를 입력해주세요');
 
     let numberArray = prompt(`${n}개의 숫자를 입력해주세요`).split(' ');
+    numberArray = numberArray.map((a) => a = Number(a));
 
     let answer = `${numberArray[0]} `;
 
-    for (let i = 1; i < numberArray.length; i++) {
-        if (n - 1 < numberArray[i]) {
-            answer += `${numberArray[i]} `;
-        }
+    for (let i = 1; i < n; i++) {
+        if (numberArray[i] > numberArray[i - 1]) answer += `${numberArray[i]} `;
     }
 
     return answer.trim();

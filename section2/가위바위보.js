@@ -15,23 +15,14 @@
 const findResult = (a, b) => {
     switch (a) {
         case '1':
-            if (b === '3') {
-                return 'A';
-            } else {
+            if (b === '3') return 'A';
                 return 'B';
-            }
         case'2':
-            if (b === '1') {
-                return 'A';
-            } else {
+            if (b === '1') return 'A';
                 return 'B';
-            }
         case '3':
-            if (b === '2') {
-                return 'A';
-            } else {
+            if (b === '2') return 'A';
                 return 'B';
-            }
     }
 }
 
