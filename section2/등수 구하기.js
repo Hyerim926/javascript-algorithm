@@ -16,20 +16,19 @@ const solution = () => {
         .split(' ')
         .map((one) => Number(one));
 
-    const answer = new Array(5);
-
-    const maxScoreIdx = scoreArray.findIndex((score) => score === Math.max(...scoreArray));
-    answer[maxScoreIdx] = 1;
-
-    let count = 0;
+    // 배열 초기화할 때 모든 요소를 1로 초기화하면 된다는 걸 생각 못했다
+    // let answer = Array.from({length: 5}, () => 1);
+    const answer = [];
     for (let i = 0; i < student; i++) {
-        for (let j = 1; j < student; j++) {
-            if (scoreArray[i] > scoreArray[j]) {
-                count++;
+        answer.push(1);
+    }
+
+    for (let i = 0; i < student; i++) {
+        for (let j = 0; j < student; j++) {
+            if (scoreArray[j] > scoreArray[i]) {
+                answer[i]++;
             }
-            answer[i] = count + 1;
         }
-        count = 0;
     }
     return answer;
 }

@@ -21,11 +21,15 @@ const solution = () => {
     }
 
     const sumArray = [];
+
+    // 각 행의 합
     valueArray.forEach((arr) => sumArray.push(arr.reduce((sum, currValue) => {
         return sum + currValue;
     }, 0)));
 
     let sum = 0;
+
+    // 각 열의 합
     for (let i = 0; i < n; i++) {
         for (let j = 0; j < n; j++) {
             sum += valueArray[j][i];
@@ -34,16 +38,20 @@ const solution = () => {
         sum = 0;
     }
 
+    // 대각선 왼 -> 오
     for (let i = 0; i < n; i++) {
         sum += valueArray[i][i];
     }
     sumArray.push(sum);
     sum = 0;
 
-    for (let i = 0; i < 5; i++) {
-        sum += valueArray[i][4 - i];
+    // 대각선 오 -> 왼
+    for (let i = 0; i < n; i++) {
+        sum += valueArray[i][n - 1 - i];
     }
     sumArray.push(sum);
+
+    console.log(sumArray);
 
     return Math.max(...sumArray);
 }
