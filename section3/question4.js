@@ -18,7 +18,6 @@ const getIndexOfLetter = (s, t) => {
 }
 
 const solution = (s, t) => {
-    let index;
     let answer = '';
 
     const indexArray = getIndexOfLetter(s, t);
