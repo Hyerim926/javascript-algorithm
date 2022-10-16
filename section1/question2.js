@@ -21,20 +21,3 @@ const solution = (a, b, c) => {
 
 console.log(solution(6, 7, 11));
 console.log(solution(13, 33, 17));
-
-/*
-* 강사님 코드
-*          function solution(a, b, c){
-                let answer="YES", max;
-                let tot=a+b+c;
-                if(a>b) max=a;
-                else max=b;
-                if(c>max) max=c;
-                if(tot-max<=max) answer="NO";
-                return answer;
-            }
-
-            console.log(solution(13, 33, 17));
-*
-* # 궁금한 점 : 배열로 풀면 소요시간이 더 오래 걸릴까?
-* */
