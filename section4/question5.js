@@ -11,7 +11,8 @@ const solution = (n, k, arr) => {
     for (let i = 0; i < n; i++) {
         for (let j = i + 1; j < n; j++) {
             for (let l = i + 2; l < n; l++) {
-                if (j !== l) sumArr.push(arr[i] + arr[j] + arr[l]);
+                // 마지막 인덱스인 n - 1이 같아지는 경우를 제외함
+                if (i !== j && j !== l && i !== l) sumArr.push(arr[i] + arr[j] + arr[l]);
             }
         }
     }
