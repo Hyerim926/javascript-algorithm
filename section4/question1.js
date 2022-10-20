@@ -6,15 +6,14 @@
 
 // 각 자리수의 숫자의 합을 구하는 함수
 const getSum = (num) => {
-    num = num.toString()
+    return num.toString()
         .split('')
         .map((one) => Number(one))
         .reduce((pre, cur) => pre + cur);
-
-    return num;
 };
 
 const solution = (array) => {
+    // 자연수를 가지고 합하는 것이니 초기화를 0으로 함
     let max = 0;
 
     for (let i = 0; i < array.length; i++) {

@@ -9,37 +9,46 @@
 */
 
 const solution = (array) => {
-    // const rank = [];
-    // for (let i = 0; i < array[0].length; i++) {
-    //     let temp = [];
-    //     for (let j = 0; j < array.length; j++) {
-    //         temp.push(array[j][i]);
-    //     }
-    //     rank.push(temp);
-    // }
-
     let answer = 0;
-
-    for (let i = 0; i < array[0].length; i++) {
-        console.log('------------------');
-        console.log(`${i + 1} 번째 학생`);
-        for (let j = 0; j < array.length; j++) {
-            let count = 0;
-            let temp = 0;
-            console.log(`${j + 1} 번째 학생과 비교`)
-            for (let k = 0; k < array.length; k++) {
-                console.log(`${k + 1} 번째 시험의 결과는?`);
-                let a = array[k][i]
-                let b = array[k][j]
-                if (a < b) {
-                    temp++;
-                    console.log('이겼습니다');
+    let m = array.length;
+    let n = array[0].length;
+    for (let i = 1; i <= n; i++) {
+        for (let j = 1; j <= n; j++) {
+            let cnt = 0;
+            for (let k = 0; k < m; k++) {
+                let pi = 0, pj = 0;
+                for (let s = 0; s < n; s++) {
+                    if (array[k][s] === i) pi = s;
+                    if (array[k][s] === j) pj = s;
                 }
-                if (temp > 2) answer++;
-                console.log(a, b, temp, count);
+                if (pi < pj) cnt++;
             }
+            if (cnt === m) answer++;
         }
     }
+
+    /*
+        for (let i = 0; i < array[0].length; i++) {
+            console.log('------------------');
+            console.log(`${i + 1} 번째 학생`);
+            for (let j = 0; j < array.length; j++) {
+                let count = 0;
+                let temp = 0;
+                console.log(`${j + 1} 번째 학생과 비교`)
+                for (let k = 0; k < array.length; k++) {
+                    console.log(`${k + 1} 번째 시험의 결과는?`);
+                    let a = array[k][i]
+                    let b = array[k][j]
+                    if (a < b) {
+                        temp++;
+                        console.log('이겼습니다');
+                    }
+                    if (temp > 2) answer++;
+                    console.log(a, b, temp, count);
+                }
+            }
+        }
+    */
     return answer;
 }
 
