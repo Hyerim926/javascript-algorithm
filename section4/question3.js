@@ -26,30 +26,34 @@ const solution = (array) => {
             if (cnt === m) answer++;
         }
     }
+    return answer;
+}
 
-    /*
-        for (let i = 0; i < array[0].length; i++) {
-            console.log('------------------');
-            console.log(`${i + 1} 번째 학생`);
-            for (let j = 0; j < array.length; j++) {
-                let count = 0;
-                let temp = 0;
-                console.log(`${j + 1} 번째 학생과 비교`)
-                for (let k = 0; k < array.length; k++) {
-                    console.log(`${k + 1} 번째 시험의 결과는?`);
-                    let a = array[k][i]
-                    let b = array[k][j]
-                    if (a < b) {
-                        temp++;
-                        console.log('이겼습니다');
-                    }
-                    if (temp > 2) answer++;
-                    console.log(a, b, temp, count);
+// 배열의 숫자가 등수이고 인덱스가 학생 아이디인줄 알고 잘못 풀었다.. 그래서 답도 맞지 않았던 것이었다.
+const notSolution = (array) => {
+    let answer = 0;
+    for (let i = 0; i < array[0].length; i++) {
+        console.log('------------------');
+        console.log(`${i + 1} 번째 학생`);
+        for (let j = 0; j < array.length; j++) {
+            let count = 0;
+            let temp = 0;
+            console.log(`${j + 1} 번째 학생과 비교`)
+            for (let k = 0; k < array.length; k++) {
+                console.log(`${k + 1} 번째 시험의 결과는?`);
+                let a = array[k][i]
+                let b = array[k][j]
+                if (a < b) {
+                    temp++;
+                    console.log('이겼습니다');
                 }
+                if (temp > 2) answer++;
+                console.log(a, b, temp, count);
             }
         }
-    */
+    }
     return answer;
 }
 
 console.log(solution([[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2]]));
+console.log(notSolution([[3, 4, 1, 2], [4, 3, 2, 1], [3, 1, 4, 2]]));

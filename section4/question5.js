@@ -9,21 +9,19 @@
 const solution = (n, k, arr) => {
     const sumArr = [];
     for (let i = 0; i < n; i++) {
-        for (let j = i + 1; j < n; j++) {
-            for (let l = i + 2; l < n; l++) {
-                // 마지막 인덱스인 n - 1이 같아지는 경우를 제외함
+        for (let j = 0; j < n; j++) {
+            for (let l = 0; l < n; l++) {
+                // 각 한 장씩 뽑아야하기 때문에 i, j, l이 다 달라야함
                 if (i !== j && j !== l && i !== l) sumArr.push(arr[i] + arr[j] + arr[l]);
             }
         }
     }
 
-    const noDuplicatedArr = [...new Set(sumArr)];
-
-    noDuplicatedArr.sort((a, b) => {
+    const noDuplicatedArr = [...new Set(sumArr)].sort((a, b) => {
         return b - a;
     });
 
-    return noDuplicatedArr[2];
+    return noDuplicatedArr[k - 1];
 }
 
 console.log(solution(10, 3, [13, 15, 34, 23, 45, 65, 33, 11, 26, 42]))
