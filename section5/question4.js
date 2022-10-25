@@ -38,5 +38,16 @@ const solution = (arr, m) => {
     return count;
 }
 
-// console.log(solution([1, 3, 1, 2, 3], 5));
-console.log(solution([1, 3, 1, 1], 4));
+const solution2 = (arr, m) => {
+    let answer = 0, sum = 0, lt = 0;
+    for (let rt = 0; rt < arr.length; rt++) {
+        sum += arr[rt];
+        while (sum > m) {
+            sum -= arr[lt++];
+        }
+        answer += (rt - lt + 1);
+    }
+    return answer;
+}
+console.log(solution2([1, 3, 1, 2, 3], 5));
+// console.log(solution2([1, 3, 1, 1], 4));
