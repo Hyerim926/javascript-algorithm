@@ -5,32 +5,24 @@
  */
 
 const solution = (str) => {
-    const laser =
-        {
-            length: str.split('()').length - 1,
-            indexRange: [],
-        };
+    let result = 0;
 
     str = str.split('');
+
+    const stack = [];
+
     for (let i = 0; i < str.length; i++) {
-        if (str[i] === '(' && str[i + 1] === ')') {
-            laser.indexRange.push([i, i + 1]);
+        if (str[i] === '(') {
+            stack.push('(')
+        } else {
+            stack.pop();
+            if (str[i - 1] === '(') {
+                result += stack.length;
+            } else {
+                result++;
+            }
         }
     }
-
-    // let stick = 0;
-    // while (stick <= )
-    const indexArray = []
-    str.forEach()
-
-    for (let i = 0; i < str.length; i++) {
-
-    }
-
-    // console.log(laser);
-
-    let result;
-
     return result;
 }
 

@@ -10,9 +10,9 @@ const solution = (str) => {
     const stack = [];
 
     for (let i = 0; i < strToArr.length; i++) {
-        if (strToArr[i] === '(' || strToArr[i].match(/[a-zA-Z]/)) {
+        if (strToArr[i] !== ')') {
             stack.push(strToArr[i]);
-        } else if (strToArr[i] === ')') {
+        } else {
             stack.splice(stack.lastIndexOf('('));
         }
     }

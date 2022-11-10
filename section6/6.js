@@ -7,6 +7,7 @@
 * 그리고 다음 왕자부터 다시 1부터 시작하여 번호를 외친다.
 * N과 K가 주어질 때 공주를 구하러 갈 왕자의 번호를 출력하는 프로그램을 작성하시오.*/
 
+// push, shift, pop 을 적절하게 사용하지 못한 거 같다
 const solution = (n, k) => {
     let princeByHeight = [];
     for (let i = 0; i < n; i++) {

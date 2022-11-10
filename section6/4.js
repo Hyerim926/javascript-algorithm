@@ -16,7 +16,7 @@ const solution = (str) => {
     while (str.length > 0) {
         for (let i = 0; i < str.length; i++) {
             if (str[i] === '+') {
-                if (str[i - 2] && typeof str[i - 2] === "number") {
+                if (str[i - 2] && !isNaN(str[i - 2])) {
                     result = str[i - 2] + str[i - 1];
                     str.splice(i - 2, 3);
                 } else {
@@ -24,7 +24,7 @@ const solution = (str) => {
                     str.splice(i - 1, 2);
                 }
             } else if (str[i] === '*') {
-                if (str[i - 2] && typeof str[i - 2] === "number") {
+                if (str[i - 2] && !isNaN(str[i - 2])) {
                     result = str[i - 2] * str[i - 1];
                     str.splice(i - 2, 3);
                 } else {
@@ -32,7 +32,7 @@ const solution = (str) => {
                     str.splice(i - 1, 2);
                 }
             } else if (str[i] === '-') {
-                if (str[i - 2] && typeof str[i - 2] === "number") {
+                if (str[i - 2] && !isNaN(str[i - 2])) {
                     result = str[i - 2] - str[i - 1];
                     str.splice(i - 2, 3);
                 } else {
@@ -40,7 +40,7 @@ const solution = (str) => {
                     str.splice(i - 1, 2);
                 }
             } else if (str[i] === '/') {
-                if (str[i - 2] && typeof str[i - 2] === "number") {
+                if (str[i - 2] && !isNaN(str[i - 2])) {
                     result = str[i - 2] / str[i - 1];
                     str.splice(i - 2, 3);
                 } else {
@@ -56,3 +56,4 @@ const solution = (str) => {
 console.log(solution('352+*9-'));
 console.log(solution('352*+9-'));
 console.log(solution('352-*9+'));
+console.log(solution('35-'));
