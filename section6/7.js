@@ -10,9 +10,7 @@ const solution = (order, plan) => {
     const indexArr = [];
 
     for (let i = 0; i < order.length; i++) {
-        if (plan.includes(order[i])) {
-            indexArr.push(plan.findIndex((one) => one === order[i]));
-        }
+        indexArr.push(plan.findIndex((one) => one === order[i]));
     }
 
     let count = 0;
