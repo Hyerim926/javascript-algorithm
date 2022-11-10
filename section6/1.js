@@ -14,13 +14,13 @@ const solution = (str) => {
        조건3 : (의 개수와 )의 개수가 동일해야 함
      */
     if (strToArr[0] === '(' && strToArr[strToArr.length - 1] === ')' && strToArr.length % 2 === 0) {
-        let first, second = 0;
+        let left, right = 0;
         strToArr.forEach((one) => {
-            if (one === '(') first++;
-            second++;
+            if (one === '(') left++;
+            right++;
         })
 
-        if (first === second) answer = 'YES';
+        if (left === right) answer = 'YES';
     }
     return answer;
 }
